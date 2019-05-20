@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100vh;
+}
+body {
+  height: 100vh;
+  font-size: 18px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: url("https://novologistica.com/wp-content/uploads/2017/04/estanterias.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
+.container .navbar {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  background: #6c818b5b;
+  padding-right: 50px;
+}
+.container .navbar ul {
+  font-size: 0.8em;
+  display: flex;
+}
+.container .navbar ul a {
+  text-decoration: none;
+}
+.container .navbar ul a li {
+  list-style: none;
+  padding: 12px;
+  color: #fff;
+  font-weight: 700;
+}
+.container .navbar ul a li:hover {
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+}
+.container .navbar ul a li:active{
+    background-color: rgb(212, 209, 209);
+    color: rgba(49, 49, 49, 0.897);
+}
+.container .main {
+  height: 100vh;
+  display: flex;
+  width: 100%;
+}
+.container .containerCard {
+  color: rgb(243, 243, 243);
+  font-size: 1em;
+  display: flex;
+  width: 50%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .containerCard .card {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(36, 35, 35, 0.719);
+  width: 50%;
+  padding: 30px;
+  box-shadow:  5px 10px 4px 0px rgba(82, 81, 81, 0.856);
+}
+.container .containerCard .card .title {
+  font-size: 0.9em;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.container .containerCard .card .text {
+  text-align: center;
+  padding-bottom: 50px;
+}
+.container .containerCard .card .boton {
+  text-align: center;
+}
+.container .containerCard .card .boton button {
+  font-size: 1em;
+  width: 200px;
+  height: 40px;
+  background-color: #888a8b5b;
+  border: none;
+  color: #fff;
+  border-radius: 15px;
+  font-weight: 700;
+}
+.container .containerCard .card .boton button:hover {
+  background-color: #e4e8eb62;
+  color: #000;
+  cursor: pointer;
+}
+.container .containerCard .card .boton button:focus{
+    outline: none;
+}
+.container .containerCard .card .boton button:active{
+    color: #fff
+}
+
+@media screen and (max-width: 1266px) {
+    .container .containerCard .card{
+        width: 65%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .container .containerCard .card{
+        width: 70%;
+    }
+    .container .containerCard .card .title{
+        font-size: 0.8em;
+    }
+    .container .containerCard .card .text {
+        font-size: 0.9em;
+    }
+    .container .containerCard .card .boton button{
+        font-size: 0.95em;
+    }
+}
+@media screen and (max-width: 824px) {
+    .container .containerCard .card{
+        width: 80%;
+    }
+    .container .containerCard .card .title{
+        font-size: 0.7em;
+    }
+    .container .containerCard .card .text {
+        font-size: 0.8em;
+    }
+    .container .containerCard .card .boton button{
+        font-size: 0.85em;
+    }
+}
+@media screen and (max-width: 652px) {
+    .container .containerCard {
+        width: 100%;
+      }
+
+    .container .containerCard .card .title{
+        font-size: 0.6em;
+    }
+    .container .containerCard .card .text {
+        font-size: 0.7em;
+    }
+    .container .containerCard .card .boton button{
+        font-size: 0.75em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
