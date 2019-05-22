@@ -6,16 +6,17 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//Crud del usuario
 app.post("/api/v1/create/user", (req, res) => {
-  const { nombre, apellido, email, contraseña } = req.body;
+  const { nombre, apellido, email, password } = req.body;
   const newUser = User({
     nombre,
     apellido,
     email,
-    contraseña
+    password
   });
   newUser.save((err, user) => {
-    !err ? res.status(201).send(user) : res.status(409).send(err);
+    !err ? res.status(201).send(user) : console.log(err);
   });
 });
 app.get("/api/v1/get/user/:userId", (req, res) => {
@@ -51,6 +52,22 @@ app.delete("/api/v1/delete/user/:email", (req, res) => {
     })
     .catch(err => {
       res.status(409).send(err);
+    });
+});
+
+//Crud del login
+
+app.post("/api/v1/login/user", (req, res) => {
+  const { email, password } = req.body;
+  User.findOne({ email: email })
+    .exec()
+    .then(user => {
+      user.comparePassword(password, function(err, isMatch) {
+        !err ? res.status(200).send(isMatch) : res.status(409).send(err);
+      });
+    })
+    .catch(err => {
+      res.send(err);
     });
 });
 
