@@ -33,6 +33,16 @@ app.get("/api/v1/get/articulo/:articuloId", (req, res) => {
     });
 });
 
+app.get("/api/v1/allinfo/articulos",(req,res)=>{
+  Articulo.find()
+  .exec()
+  .then(articulos=>{
+    res.status(200).send(articulos)
+  }).catch(err=>{
+    res.status(409).send(err)
+  })
+})
+
 app.put("/api/v1/update/articulo/:articuloId",(req,res)=>{
     const {articuloId}=req.params
     Articulo.findByIdAndUpdate(articuloId,{$set:req.body},{new:true})
